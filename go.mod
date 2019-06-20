@@ -8,8 +8,16 @@ require (
 	github.com/gin-gonic/gin v1.4.0
 	github.com/kr/pretty v0.1.0 // indirect
 	github.com/mattn/go-isatty v0.0.8 // indirect
+	golang.org/x/net v0.0.0 // indirect
+	golang.org/x/sync v0.0.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 )
+
+replace golang.org/x/sync v0.0.0 => github.com/golang/sync v0.0.0-20190423024810-112230192c58
+
+replace golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a => github.com/golang/sys v0.0.0-20190620070143-6f217b454f45
+
+replace golang.org/x/tools v0.0.0-20180917221912-90fa682c2a6e => github.com/golang/tools v0.0.0-20190619215442-4adf7a708c2d
 
 replace golang.org/x/crypto v0.0.0 => github.com/golang/crypto v0.0.0-20190618222545-ea8f1a30c443
 
