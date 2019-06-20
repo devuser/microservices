@@ -3,6 +3,7 @@ LABEL maintainer="devuser@gmail.com"
 COPY . /app
 WORKDIR /app
 RUN apk update && apk add git \
+    && export GO111MODULE=on  \
     && go mod tidy  \
     && go build -o ./app
 
