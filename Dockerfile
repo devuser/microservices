@@ -3,8 +3,8 @@ LABEL maintainer="devuser@gmail.com"
 COPY . /app
 WORKDIR /app
 RUN apk update && apk add git \
-    && go get github.com/gin-gonic/gin \
     && go mod tidy \
+    && go get -u github.com/gin-gonic/gin \
     && go build
 
 FROM alpine:latest
