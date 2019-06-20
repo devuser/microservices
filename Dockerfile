@@ -4,8 +4,8 @@ COPY . /app
 WORKDIR /app
 RUN apk update && apk add git \
     && go mod tidy  \
-    && go build
-    
+    && go build -o ./app
+
 # && go get -u github.com/gin-gonic/gin \
 FROM alpine:latest
 WORKDIR /app
