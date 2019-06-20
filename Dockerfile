@@ -3,10 +3,11 @@ LABEL maintainer="devuser@gmail.com"
 COPY . /app
 WORKDIR /app
 RUN apk update && apk add git \
-    && go mod tidy \
-    && go get -u github.com/gin-gonic/gin \
-    && go build
+    && export GO111MODULE=on  \
+    && go mod tidy  \
+    && go build -o ./app
 
+# && go get -u github.com/gin-gonic/gin \
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/app .
